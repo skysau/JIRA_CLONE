@@ -1,0 +1,115 @@
+<app-header></app-header>
+    <ng-container id="body">
+      <!-- <form [formGroup]="searchForm" (change)="search()" formControlName="username"> -->
+        <button type="button" class="btn btn-primary close " (click)="addNewTask()"  aria-label="Close">
+          <span aria-hidden="true">add New Task</span>
+        </button>
+        
+        <form>
+        <input id="searchBox" [(ngModel)]="searchTerm" (keyup)="search($event)" type="text" name="searchProfile" value="" 
+            placeholder="Search by Name....." />
+    </form>
+<h2 id="head" style="text-align:center"><u>JIRA Board </u></h2>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2 class="text-center">TO-DO LIST</h2>
+    <ng-container  *ngFor="let datas of todo | filter:searchKey:'name'" class="example-box" cdkDrag> 
+      <button type="button" class="float-right close " (click)="deleteTask('todo')" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="card" *ngIf="datas.id!==ids">
+    
+     
+      <table>
+        <tr>
+          <td class="card1">
+            <!-- <div class="card2"> -->
+         <p>{{datas.name}}</p>
+         <p>{{datas.email}}</p>
+         <p>{{datas.website}}</p>
+        
+    
+      <!-- </div> -->
+          </td>
+          <td class="card2">
+             <p><button class="button" (click)="onSelect(datas)">profile</button></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+      
+    
+    </ng-container>
+    <button class="button buttn" (click)="AddTask('todo')">add ToDo</button>
+  </div>
+  <div class="column" style="background-color:rgb(245, 191, 191);">
+    <h2 class="text-center">In-Progress LIST</h2>
+    <ng-container  *ngFor="let datas of progress | filter:searchKey:'name'"> 
+      <button type="button" class="float-right close " (click)="deleteTask('progress')" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="card" *ngIf="datas.id!==ids">
+    
+     
+      <table>
+        <tr>
+          <td class="card1">
+            <!-- <div class="card2"> -->
+         <p>{{datas.name}}</p>
+         <p>{{datas.email}}</p>
+         <p>{{datas.website}}</p>
+        
+    
+      <!-- </div> -->
+          </td>
+          <td class="card2">
+             <p><button class="button" (click)="onSelect(datas)">profile</button></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+      
+    
+    </ng-container>
+    <button class="button buttn"(click)="AddTask('progress')">add Progress Task</button>
+  </div>
+ 
+<ng-container class="dynamic" *ngFor="let datass of task, let i = index">
+   <div class="column" style="background-color:rgb(190, 164, 245);">
+    <h2 class="text-center">Completed LIST<button type="button" class="float-right close " (click)="deleteTaskColum('details',i)" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button></h2>
+    
+    <ng-container  *ngFor="let datas of datass | filter:searchKey:'name'"> 
+     <button type="button" class="float-right close " (click)="deleteTask('details',i)" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="card" *ngIf="datas.id!==ids">
+     
+     
+      <table>
+        <tr>
+          <td class="card1">
+            <!-- <div class="card2"> -->
+         <p>{{datas.name}}</p>
+         <p>{{datas.email}}</p>
+         <p>{{datas.website}}</p>
+        
+    
+      <!-- </div> -->
+          </td>
+          <td class="card2">
+             <p><button class="button" (click)="onSelect(datas)">profile</button></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </ng-container>
+    <button class="button buttn" (click)="AddTask('details',i)">add List</button>
+  </div>
+</ng-container>
+</div>
+
+</ng-container>
+<app-footer></app-footer>

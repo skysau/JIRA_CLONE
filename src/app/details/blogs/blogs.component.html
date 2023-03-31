@@ -1,0 +1,34 @@
+<app-header></app-header>
+<ng-container >
+                 
+    <h1 id="isa" class="mb-1">{{Name}} <span style="font-size: 15px; color: rgb(54, 22, 240);">(@{{userName}})</span></h1>
+   
+</ng-container>
+<div class="topnav" id="myTopnav">
+    <a [routerLink]="['../../details', ids]" >Profile</a>
+    <a [routerLink]="['../../Album',ids]">Albums</a>
+    <a routerLink="Blogs" class="active">Blogs</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+<hr>
+<h1 id="album">Blogs</h1>
+<ng-container class="card"  *ngFor="let datas  of blog; let i = index"  >
+
+<ng-container *ngIf="datas.userId===idss" >
+
+
+<div class="card">
+<div class="card-body">
+<h1 class="card-title mb-2 pb-1" style="color: #2b2a2a;"> <Span style="font-size: 15px; color: rgb(54, 22, 240);">Album:-{{datas.id-i}}</Span></h1>
+<h1 class="card-text" style="font-size: 25px; color: rgb(114, 7, 253)"> {{datas.title}}</h1>
+<p class="card-text">{{datas.body}}</p>
+
+</div>
+</div>
+
+
+</ng-container>
+</ng-container>
+<app-footer></app-footer>

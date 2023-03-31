@@ -1,0 +1,9 @@
+<div class="topnav" >
+    <div class="right"><a [routerLink]="['../../dashboard']" routerLinkActive="active">Home (All_Profie)</a>
+ 
+    <a (click)="onmyprofile()" [routerLink]="['../../details',ids]" routerLinkActive="active">My Profile</a>
+  </div>
+    <div class="lefts" >
+        <p>Wellcome, {{name}}<button routerLink="log-in">LogOut</button></p>
+    </div>
+  </div>

@@ -1,0 +1,58 @@
+.button {
+    border: 3px;
+    outline: 2px;
+    display: inline-block;
+    padding: 8px;
+    color: grey;
+    margin-right: 10%;
+    background-color: rgb(13, 172, 47);
+    text-align: auto;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px 0 rgba(7, 7, 7, 1);
+    align-items: center;
+  }
+  
+  
+  button:hover, a:hover {
+    box-shadow: 0 12px 12px 0 rgba(253, 1, 1, 0.8);
+  
+    opacity: 0.7;
+    color: rgb(247, 6, 6);
+    background-color: rgb(17, 40, 250);
+  }
+  .lefts{
+    align-content: left;
+    display: inline;
+    float: right;
+    margin:20px;
+  }
+  .lefts button{
+    margin-left:  20px;
+    background-color: aqua;
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: rgb(174, 177, 174);
+    
+  }
+  
+  .topnav a {
+    float: left;
+    color: black;
+   
+    text-align: center;
+    padding: 30px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: rgb(168, 149, 106);
+    color: black;
+  }
+ .active{
+   background-color: aqua;
+ }
